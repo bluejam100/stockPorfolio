@@ -12,7 +12,7 @@
 ;
   grid-gap: 1.5rem;
   margin: 2vh 16vw 2vh 16vw;
-  height: 85%;
+
   border-radius: 30px;
 }
 
@@ -56,6 +56,10 @@
   "transaction-table"
 ;
   grid-gap: 0.2rem;
+
+
+
+
 }
 
 #side-container {
@@ -78,6 +82,7 @@
   font-size: 25px;
   display: flex;
   align-items: center;
+  letter-spacing: -1px;
   /*box-shadow: var(--main-box-shadow);*/
 }
 
@@ -108,7 +113,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  max-width: 200px;
+  max-width: 280px;
 }
 
 #porfolio-value {
@@ -141,13 +146,14 @@
 /*ELEMENTS INSIDE BOTTOM-CONTAINER DOWN*/
 
 #bottom-title {
-  background-color: pink;
+  /*background-color: pink;*/
   grid-area: bottom-title;
   padding: var(--main-padding);
-  font-family:  "DM Serif Display", sans-serif;
-  font-weight: 500;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
   font-size: 25px;
   display: flex;
+  letter-spacing: -1px;
   align-items: center;
 }
 #transaction-table {
@@ -163,7 +169,7 @@
 
 /*ELEMENTS INSIDE BOTTOM-CONTAINER UP*/
 
-@media only screen and (max-width:1300px){
+@media only screen and (max-width:1860px){
   #profile-container {
     margin-right: 4vw;
     margin-left:4vw;
@@ -184,4 +190,38 @@
     font-size: 20px;
     font-family: 'Chivo Mono', monospace;
   }
+}
+
+
+
+.crud-button {
+  border-radius: 10px;
+  background-color: #225559 ;
+  color: white;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 15px 0 0 0;
+  display : flex;
+  align-items: center;
+  cursor: pointer;
+
+}
+.crud-button:hover{
+  opacity: 0.75;
+}
+
+#add-button, #sell-button,#delete-button, #edit-button {
+  border : 1px solid;
+  background-color: white;
+  color: black
+}
+
+#export-button{
+  background-color: black;
+  color: white
+}
+a, a:link, a:visited {
+  text-decoration: none;
+  color: black;
 }
