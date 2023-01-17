@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0;  }
+:root {
+  --main-radius:20px;
+  --main-padding: 5px 20px 5px 20px;
+  --main-box-shadow: rgb(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --main-bg-color-primary : #f4f5f7;
+  --main-bg-color-secondary : white;
+  --main-font-family: apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+}

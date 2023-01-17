@@ -1,0 +1,187 @@
+
+
+
+#profile-container{
+  /*background-color: #fcfcfc;*/
+  display: grid;
+  grid-template-columns: 3fr 1fr ;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "top-container side-container"
+  "bottom-container side-container"
+;
+  grid-gap: 1.5rem;
+  margin: 2vh 16vw 2vh 16vw;
+  height: 85%;
+  border-radius: 30px;
+}
+
+
+
+#top-container {
+
+  background-color: var(--main-bg-color-primary);
+  grid-area : top-container;
+  border-radius:var(--main-radius);
+  padding: 15px;
+  /*box-shadow: var(--main-box-shadow);*/
+
+  display: grid;
+  grid-template-columns: 1fr 3fr ;
+  grid-template-rows: 0.3fr 0.9fr 0.9fr 0.9fr;
+  grid-template-areas:
+    "top-title validate-date"
+  " porfolio-value chart"
+  "total-invested chart"
+  "net-profit chart"
+;
+  grid-gap: 1rem;
+
+
+}
+
+#bottom-container {
+  /*background-color: pink;*/
+  background-color: var(--main-bg-color-primary);
+  grid-area : bottom-container;
+  border-radius:var(--main-radius);
+  padding: 15px;
+  /*box-shadow: var(--main-box-shadow);*/
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.3fr 1.7fr;
+  grid-template-areas:
+    "bottom-title"
+  "transaction-table"
+;
+  grid-gap: 0.2rem;
+}
+
+#side-container {
+  /*background-color: pink;*/
+  background-color: var(--main-bg-color-primary);
+  grid-area : side-container;
+  border-radius:var(--main-radius);
+  padding: var(--main-padding);
+  /*box-shadow: var(--main-box-shadow);*/
+}
+
+/*ELEMENTS INSIDE TOP-CONTAINER DOWN*/
+#top-title {
+
+  /*background-color: pink;*/
+  grid-area : top-title;
+  padding: var(--main-padding);
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  /*box-shadow: var(--main-box-shadow);*/
+}
+
+#validate-date {
+  /*background-color: pink;*/
+  grid-area: validate-date;
+  padding: var(--main-padding);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #b6b7b8;
+  font-weight: 600;
+}
+
+#chart {
+  /*background-color: pink;*/
+  background-color: var(--main-bg-color-secondary);
+  grid-area : chart;
+  border-radius:var(--main-radius);
+  padding: var(--main-padding);
+  /*box-shadow: var(--main-box-shadow);*/
+}
+.porfolio-bloc{
+  background-color: var(--main-bg-color-secondary);
+  border-radius: var(--main-radius);
+  padding: 10px 0 10px 15px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 200px;
+}
+
+#porfolio-value {
+  /*background-color: pink;*/
+  grid-area: porfolio-value;
+
+}
+#total-invested {
+  grid-area: total-invested;
+}
+#net-profit {
+  grid-area: net-profit;
+}
+
+.porfolio-bloc:hover {
+  background-color: #225559;
+  color: white;}
+
+.porfolio-title{
+ font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.porfolio-number{
+  font-size: 25px;
+  font-family: 'Chivo Mono', monospace;
+}
+/*ELEMENTS INSIDE TOP-CONTAINER UP*/
+
+/*ELEMENTS INSIDE BOTTOM-CONTAINER DOWN*/
+
+#bottom-title {
+  background-color: pink;
+  grid-area: bottom-title;
+  padding: var(--main-padding);
+  font-family:  "DM Serif Display", sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+}
+#transaction-table {
+  background-color: var(--main-bg-color-secondary);
+  grid-area: transaction-table;
+}
+/*// saira, paytone one, bai jamjuree,*/
+.example-viewport {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+}
+
+/*ELEMENTS INSIDE BOTTOM-CONTAINER UP*/
+
+@media only screen and (max-width:1300px){
+  #profile-container {
+    margin-right: 4vw;
+    margin-left:4vw;
+
+    grid-template-columns: 1fr ;
+    grid-template-rows: 1fr 0.7fr 0.7fr;
+    grid-template-areas:
+    "top-container"
+  "bottom-container"
+    "side-container"
+  }
+
+  .porfolio-title{
+    font-size: 13px;
+  }
+
+  .porfolio-number{
+    font-size: 20px;
+    font-family: 'Chivo Mono', monospace;
+  }
+}
