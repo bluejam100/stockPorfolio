@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import {Porfolio} from "./Porfolio";
+import {StockService} from "./core/stockService";
+import {ChartObject} from "./ChartObject";
+import {Transaction} from "./Transaction";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +11,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'untitled';
+
+
 }

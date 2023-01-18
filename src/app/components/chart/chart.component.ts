@@ -17,9 +17,9 @@ export class ChartComponent implements OnInit {
           label: '# of Votes',
           data: [12, 19, 3, 5, 2, 3],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)'],
+            'rgba(34, 85, 89, 0.2)'],
           borderColor: [
-            'rgba(255, 99, 132, 1)'],
+            'rgba(34, 85, 89, 1)'],
          fill: true
         }]
       },
