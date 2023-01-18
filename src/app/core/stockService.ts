@@ -9,7 +9,7 @@ import {Porfolio} from "../Porfolio";
 })
 export class StockService {
 
-  private apiServerUrl ='C:\\StockChart\\src\\assets\\returnedFromBackEnd.json'
+  private apiServerUrl ='C:\\StockChart\\src\\assets\\returnedFromBackEnd.ts'
   constructor(private http: HttpClient) { }
 
   public getStocks(): Observable<Porfolio> {

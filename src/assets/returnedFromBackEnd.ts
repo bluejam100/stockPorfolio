@@ -1,4 +1,30 @@
-{
+type date_val = {
+ date: string;
+ porfolioValue: number;
+
+}
+
+type table_vals = {
+  id: number;
+  type: string;
+  name: string;
+  share: number;
+  price: number;
+  date: string;
+}
+
+type serial = {
+  porfolioValueNow: number;
+  totalInvested: number;
+  netProfit: number;
+  chart: date_val[];
+  table: table_vals[]
+}
+
+
+
+
+let data : serial = {
 
   "porfolioValueNow" : 70000,
   "totalInvested" : 12000,
@@ -52,3 +78,5 @@
 "date": "2023-02-27"
 }]
 }
+
+export default data

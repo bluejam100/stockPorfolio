@@ -3,6 +3,8 @@ import {Porfolio} from "./Porfolio";
 import {StockService} from "./core/stockService";
 import {ChartObject} from "./ChartObject";
 import {Transaction} from "./Transaction";
+import data from "../assets/returnedFromBackEnd"
+
 
 @Component({
   selector: 'app-root',
