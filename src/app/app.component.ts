@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
-import {Porfolio} from "./Porfolio";
-import {StockService} from "./core/stockService";
-import {ChartObject} from "./ChartObject";
-import {Transaction} from "./Transaction";
-import data from "../assets/returnedFromBackEnd"
+import { Component, OnInit } from '@angular/core';
+
+import {StockService} from "./core/StockService";
+import data, {serial} from "./Data";
+
+
+
 
 
 @Component({
@@ -12,7 +13,11 @@ import data from "../assets/returnedFromBackEnd"
   styleUrls: ['../../../StockChart/src/app/app.component.css']
 })
 export class AppComponent {
-  title = 'untitled';
+
+
+  title: string = "untitled";
+
+
 
 
 }

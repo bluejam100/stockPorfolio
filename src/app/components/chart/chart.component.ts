@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
+import data, {DateToValue} from "../../Data";
 Chart.register(...registerables);
 @Component({
   selector: 'app-chart',
@@ -8,14 +9,32 @@ Chart.register(...registerables);
 })
 export class ChartComponent implements OnInit {
 
+
+  chartObject : DateToValue[] = data.chart;
+  dateLabels: string[] = this.chartObject.map(object => object.date);
+
+  porfolioValue : number[] = this.chartObject.map(object=>object.porfolioValue);
+
+
+
   ngOnInit(): void {
+
+    for (let i = 0 ; i < this.dateLabels.length; i++){
+
+      if (i==0 || i == (this.dateLabels.length)-1 ){
+        this.dateLabels[i] = this.dateLabels[i] ;
+      }
+      else{this.dateLabels[i]= ""};
+    }
+
+
     var myChart = new Chart("myChart", {
       type: 'line',
       data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: this.dateLabels,
         datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
+          label: 'Porfolio Value',
+          data: this.porfolioValue,
           backgroundColor: [
             'rgba(34, 85, 89, 0.2)'],
           borderColor: [

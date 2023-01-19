@@ -1,29 +1,26 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {Chart} from "chart.js";
+import data, {Transaction} from "../../Data";
 
 
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Amazon', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Apple', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Google', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Meta', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Netflix', weight: 10.811, symbol: 'B'},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
 
-];
+// const ELEMENT_DATA: Transaction[] = [
+//   {id: 1, name: 'Amazon', share: 1.0079, type: 'H', date: "2023-02-23"},
+//   {id: 2, name: 'Apple', share: 4.0026, type: 'He', date: "2023-02-23"},
+//   {id: 3, name: 'Google', share: 6.941, type: 'Li', date: "2023-02-23"},
+//   {id: 4, name: 'Meta', share: 9.0122, type: 'Be', date: "2023-02-23"},
+//   {id: 5, name: 'Netflix', share: 10.811, type: 'B', date: "2023-02-23"},
+//   {id: 1, name: 'Hydrogen', share: 1.0079, type: 'H', date: "2023-02-23"},
+//   {id: 2, name: 'Helium', share: 4.0026, type: 'He', date: "2023-02-23"},
+//   {id: 3, name: 'Lithium', share: 6.941, type: 'Li', date: "2023-02-23"},
+//   {id: 4, name: 'Beryllium', share: 9.0122, type: 'Be', date: "2023-02-23"},
+//   {id: 5, name: 'Boron', share: 10.811, type: 'B', date: "2023-02-23"},
+//
+// ];
 
+const TRANSACTION_DATA: Transaction[] = data.table;
 
 
 @Component({
@@ -34,9 +31,13 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 
 export class PorfolioComponent {
-  displayedColumns: string[] = ['position', 'name', 'share', 'type', 'date'];
-  dataSource = ELEMENT_DATA;
-
+  displayedColumns: string[] = ['id', 'name', 'share', 'type', 'date'];
+  dataSource = TRANSACTION_DATA;
+  todayDate : Date = new Date(Date());
+  formatTodayDate : string = this.todayDate.toDateString();
+  porfolioValueNow : number = data.porfolioValueNow;
+  totalInvested : number = data.totalInvested;
+  netProfit : number = data.netProfit;
 
   }
 
