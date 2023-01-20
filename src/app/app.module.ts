@@ -14,6 +14,14 @@ import { AddComponent } from './pages/add/add.component';
 import { SellComponent } from './pages/sell/sell.component';
 import { DeleteComponent } from './pages/delete/delete.component';
 import { EditComponent } from './pages/edit/edit.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {HttpClientModule} from "@angular/common/http";
+import {MaterialExampleModule} from '../material.module';
+
+
+
+
 
 
 const appRoutes : Routes = [
@@ -38,9 +46,19 @@ const appRoutes : Routes = [
     DeleteComponent,
     EditComponent
   ],
-    imports: [
-        BrowserModule, RouterModule.forRoot(appRoutes), ScrollingModule, MatTableModule, BrowserAnimationsModule
-    ],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    ScrollingModule,
+    MatTableModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    HttpClientModule,
+    MaterialExampleModule
+
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

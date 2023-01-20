@@ -51,6 +51,10 @@ let data: serial = {
       "date": "2022-07-29",
       "porfolioValue": 32000
     },
+    {
+      "date": "2022-07-29",
+      "porfolioValue": 32000
+    },
 ],
 
   "table":[{
@@ -84,7 +88,42 @@ let data: serial = {
     "share": 50,
     "price": 12,
     "date": "2023-02-27"
-  }]
+  },
+    {
+      "id": 1,
+      "type": "Buy",
+      "name": "Amazon",
+      "share": 40,
+      "price": 23,
+      "date": "2023-01-25"
+    },
+    {
+      "id": 2,
+      "type": "Sell",
+      "name": "Amazon",
+      "share": 23,
+      "price": 25,
+      "date": "2023-06-15"
+    },
+    {
+      "id": 3,
+      "type": "Buy",
+      "name": "Apple",
+      "share": 35,
+      "price": 100,
+      "date": "2023-08-30"
+    },
+    {
+      "id": 4,
+      "type": "Buy",
+      "name": "Google",
+      "share": 50,
+      "price": 12,
+      "date": "2023-02-27"
+    }
+
+
+  ]
 }
 
 export default data;

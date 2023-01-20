@@ -1,0 +1,99 @@
+#add-container{
+  /*background-color: #fcfcfc;*/
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "add-title add-title"
+    "add-name add-name"
+    "add-number add-price"
+    "add-date add-date"
+  "submit submit"
+;
+  padding-bottom:  2vh ;
+  grid-gap: 0.8rem;
+  margin: 8vh 10vw 0 10vw;
+  border: 1px solid #b6b7b8;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width:890px){
+  #add-container {
+    margin-right: 1vw;
+    margin-left:1vw;
+  }
+}
+
+
+#add-title {
+  /*background-color: pink;*/
+  grid-area : add-title;
+  padding: var(--main-padding);
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -1px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /*box-shadow: var(--main-box-shadow);*/
+}
+
+#add-name {
+  /*background-color: pink;*/
+  grid-area: add-name;
+  padding: var(--main-padding);
+  display: flex;
+  flex-direction: column;
+
+}
+
+#add-number {
+  /*background-color: pink;*/
+  grid-area: add-number;
+  padding: var(--main-padding);
+  display: flex;
+  flex-direction: column;
+
+}
+
+#add-price {
+  /*background-color: pink;*/
+  grid-area: add-price;
+  padding: var(--main-padding);
+  display: flex;
+  flex-direction: column;
+
+}
+
+#add-date {
+  /*background-color: pink;*/
+  grid-area: add-date;
+  padding: var(--main-padding);
+  display: flex;
+  flex-direction: column;
+
+}
+
+.titleField {
+
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+
+#submit {
+  grid-area: submit;
+  padding: var(--main-padding);
+}

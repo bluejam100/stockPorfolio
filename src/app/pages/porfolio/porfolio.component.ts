@@ -31,7 +31,7 @@ const TRANSACTION_DATA: Transaction[] = data.table;
 })
 
 export class PorfolioComponent {
-  displayedColumns: string[] = ['id', 'name', 'share', 'type', 'date'];
+  displayedColumns: string[] = ['id', 'name', 'type','share', 'price', 'date'];
   dataSource = TRANSACTION_DATA;
   todayDate : Date = new Date(Date());
   formatTodayDate : string = this.todayDate.toDateString();

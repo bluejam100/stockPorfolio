@@ -1,1 +1,58 @@
-<p>add works</p>
+<div id = add-container>
+
+
+  <div id = add-title> Add Stock</div>
+
+
+  <div id = add-name >
+    <div class=titleField>Stock Name<span style="color:red">*</span></div>
+    <p>
+      <mat-form-field appearance="fill">
+
+        <input matInput type = "text" name = "name " required/>
+        <mat-hint></mat-hint>
+      </mat-form-field>
+    </p>
+  </div>
+
+
+
+  <div id = add-number><div class=titleField>Number of shares<span style="color:red">*</span></div>
+
+    <p>
+      <mat-form-field appearance="fill" >
+
+        <input matInput type = "number" name = "number" required/>
+        <mat-hint></mat-hint>
+      </mat-form-field>
+    </p>
+
+
+  </div>
+
+  <div id = add-price> <div class=titleField>Price per share<span style="color:red">*</span></div>
+    <p>
+      <mat-form-field appearance="fill" >
+
+        <input matInput type="number" name = "price" class="example-right-align" required  placeholder="0">
+        <span matTextPrefix="">$&nbsp;</span>
+        <span matTextSuffix="">.00</span>
+
+      </mat-form-field>
+    </p>
+
+  </div>
+
+  <div id = add-date> <div class=titleField>Date</div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Choose a date</mat-label>
+      <input matInput  required  [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+  </div>
+
+  <div id = submit><button> Submit </button></div>
+</div>
