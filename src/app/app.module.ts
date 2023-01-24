@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
-import { PorfolioComponent } from './pages/porfolio/porfolio.component';
+import { PortfolioComponent } from './pages/porfolio/portfolio.component';
 import {RouterModule, Routes } from "@angular/router";
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatTableModule} from "@angular/material/table";
@@ -22,11 +22,9 @@ import {MaterialExampleModule} from '../material.module';
 
 
 
-
-
 const appRoutes : Routes = [
   {path : '', component : HomepageComponent },
-  {path : 'profile', component : PorfolioComponent},
+  {path : 'profile', component : PortfolioComponent},
   {path : 'profile/add', component : AddComponent},
   {path : 'profile/sell', component : SellComponent},
   {path : 'profile/delete', component : DeleteComponent},
@@ -39,7 +37,7 @@ const appRoutes : Routes = [
     AppComponent,
     HeaderComponent,
     HomepageComponent,
-    PorfolioComponent,
+    PortfolioComponent,
     ChartComponent,
     AddComponent,
     SellComponent,

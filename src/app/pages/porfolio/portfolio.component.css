@@ -225,3 +225,9 @@ a, a:link, a:visited {
   text-decoration: none;
   color: black;
 }
+#divChart{
+  display: block;
+  width: 100%;
+  height: 100%;
+
+}

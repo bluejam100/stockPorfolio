@@ -1,1 +1,11 @@
-<p>delete works!</p>
+<form [formGroup] = "deleteForm" (ngSubmit)="submitDelete()">
+<mat-form-field appearance="fill">
+  <mat-label>Select</mat-label>
+  <mat-select  type = "number" formControlName = "id" required>
+    <mat-option *ngFor="let id of allId;" value={{id}}>{{id}}</mat-option>
+
+  </mat-select>
+</mat-form-field>
+
+  <div id = submitDelete><button [disabled]="deleteForm.invalid" type= "submit"> Submit </button></div>
+</form>

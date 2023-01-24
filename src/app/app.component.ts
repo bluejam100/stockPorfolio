@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {StockService} from "./core/StockService";
-import data, {serial} from "./Data";
+import data, {Serial} from "./Data";
 
 
 
