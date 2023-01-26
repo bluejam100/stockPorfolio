@@ -3,7 +3,7 @@
 
   <div id = add-title> Add Stock
   <div *ngIf = "errormessage">
-  <div class = danger > <h5> {{errormessage}}</h5></div>
+  <div class = danger >  {{errormessage}} </div>
   </div>
   </div>
 
@@ -38,9 +38,9 @@
     <p>
       <mat-form-field appearance="fill" >
         <mat-label>Enter price </mat-label>
-        <input matInput type="number" formControlName = "price" required class="example-right-align"  placeholder="0">
+        <input matInput type="number" formControlName = "price" required class="example-right-align"  >
         <span matTextPrefix="">$&nbsp;</span>
-        <span matTextSuffix="">.00</span>
+
 
       </mat-form-field>
     </p>

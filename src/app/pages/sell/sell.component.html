@@ -1,1 +1,64 @@
-<p>sell works!</p>
+<div id = sell-container>
+
+
+  <div id = sell-title> Sell Stock
+    <div *ngIf = "errormessage">
+      <div class = danger >  {{errormessage}} </div>
+    </div>
+  </div>
+
+  <form [formGroup] = "profileForm" (ngSubmit)="onSubmit()">
+    <div id = sell-name >
+      <div class=titleField>Stock Name</div>
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Enter stock name</mat-label>
+          <input matInput type = "text" formControlName = "name" required/>
+          <mat-hint></mat-hint>
+        </mat-form-field>
+      </p>
+    </div>
+
+
+
+    <div id = sell-number><div class=titleField>Number of shares</div>
+
+      <p>
+        <mat-form-field appearance="fill" >
+          <mat-label>Enter number</mat-label>
+          <input matInput type = "number" formControlName = "number" required />
+          <mat-hint></mat-hint>
+        </mat-form-field>
+      </p>
+
+
+    </div>
+
+    <div id =  sell-price> <div class=titleField>Price per share</div>
+      <p>
+        <mat-form-field appearance="fill" >
+          <mat-label>Enter price </mat-label>
+          <input matInput type="number" formControlName = "price" required class="example-right-align"  >
+          <span matTextPrefix="">$&nbsp;</span>
+
+
+        </mat-form-field>
+      </p>
+
+    </div>
+
+    <div id =  sell-date> <div class=titleField>Date</div>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput formControlName="date" required  [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+    </div>
+
+    <div id = sell-submit><button [disabled]="profileForm.invalid" type= "submit"> Submit </button></div>
+  </form>
+
+</div>

@@ -49,13 +49,19 @@ export class StockService {
   }
 
 
+  public getTransaction(transactionId : number, userId : number){
+
+    return this.httpClient.get(`${this.url}/transaction/${transactionId}/${userId}`).pipe(
+      catchError(this.handleError));
+  }
+
 // Change return type to transaction later
   public addStock(data : any, userId: number): Observable<Transaction> {
  return this.httpClient.post<Transaction>(`${this.url}/stock/buy/${userId}`, data).pipe(
    catchError(this.handleError));
   }
   public sellStock(data : any, userId: number): Observable<Transaction> {
-    return this.httpClient.post<Transaction>(`${this.url}/stock/buy/${userId}`, data).pipe(
+    return this.httpClient.post<Transaction>(`${this.url}/stock/sell/${userId}`, data).pipe(
       catchError(this.handleError));
   }
 
@@ -67,8 +73,8 @@ export class StockService {
     return this.httpClient.put<Transaction>(`${this.url}/edit/${transactionId}/${userId}`, data);
   }
 // Check if this one is received correctly
-  public deleteTransaction(id : number): Observable<void> {
-    return this.httpClient.delete<void>(`${this.url}/transaction/delete/${id}`);
+  public deleteTransaction(transactionId : number): Observable<void> {
+    return this.httpClient.delete<void>(`${this.url}/transaction/delete/${transactionId}`);
   }
 
 }

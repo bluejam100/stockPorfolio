@@ -21,6 +21,7 @@ import {MaterialExampleModule} from '../material.module';
 import { SuccessComponent } from './pages/success/success.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { PieChartComponent } from './components/pie-chart/pie-chart.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -33,7 +34,12 @@ const appRoutes : Routes = [
   {path : 'profile/delete', component : DeleteComponent},
   {path : 'profile/edit', component : EditComponent},
   {path : 'success', component : SuccessComponent},
-
+  {path : 'login', component : LoginComponent},
+  {path : 'login/profile', component : PortfolioComponent},
+  {path : 'login/profile/add', component : AddComponent},
+  {path : 'login/profile/sell', component : SellComponent},
+  {path : 'login/profile/delete', component : DeleteComponent},
+  {path : 'login/profile/edit', component : EditComponent},
   {path: '**', component: NotfoundComponent}
 ]
 
@@ -51,7 +57,8 @@ const appRoutes : Routes = [
     EditComponent,
     SuccessComponent,
     NotfoundComponent,
-    PieChartComponent
+    PieChartComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

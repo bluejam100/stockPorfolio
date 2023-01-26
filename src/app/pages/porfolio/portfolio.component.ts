@@ -40,8 +40,8 @@ export class PortfolioComponent implements OnInit {
 
   //constructor(private stockService: StockService) { }
 
-  //public todayDate : Date = new Date(Date());
-  //public formatTodayDate : string = this.todayDate.toDateString();
+  public todayDate : Date = new Date(Date());
+  public formatTodayDate : string = this.todayDate.toDateString();
   public displayedColumns: string[] = ['id', 'name', 'type', 'share', 'price', 'date'];
 
   public dataSource: any;

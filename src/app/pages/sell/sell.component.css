@@ -1,0 +1,101 @@
+#sell-container{
+  /*background-color: #fcfcfc;*/
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: 0.2fr 0.5fr 0.5fr 0.5fr 0.5fr;
+  grid-template-areas:
+    "sell-title sell-title"
+    "sell-name sell-name"
+    "sell-number sell-price"
+    "sell-date sell-date"
+  "submit submit"
+;
+  padding-bottom:  2vh ;
+  grid-gap: 0.8rem;
+  margin: 8vh 10vw 0 10vw;
+  border: 1px solid #b6b7b8;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width:890px){
+  #sell-container {
+    margin-right: 1vw;
+    margin-left:1vw;
+  }
+}
+
+
+#sell-title {
+  /*background-color: pink;*/
+  grid-area : sell-title;
+  padding: var(--main-padding);
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -1px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /*box-shadow: var(--main-box-shadow);*/
+}
+
+#sell-name {
+  /*background-color: pink;*/
+  grid-area: sell-name;
+  padding: var(--main-padding);
+  display: flex;
+  flex-direction: column;
+
+}
+
+#sell-number {
+  /*background-color: pink;*/
+  grid-area:sell-number;
+  padding: var(--main-padding);
+  display: flex;
+  flex-direction: column;
+
+}
+
+#sell-price {
+  /*background-color: pink;*/
+  grid-area: sell-price;
+  padding: var(--main-padding);
+  display: flex;
+  flex-direction: column;
+
+}
+
+#sell-date {
+  /*background-color: pink;*/
+  grid-area: sell-date;
+  padding: var(--main-padding);
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+
+#sell-submit {
+  grid-area: submit;
+  padding: var(--main-padding);
+}
+
+.danger {
+  background-color: red;
+}
