@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import data, {Transaction} from "../../Data";
 import {StockService} from "../../core/StockService";
-import {FormControl, FormGroup} from "@angular/forms";
-
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
 @Component({
   selector: 'app-delete',
   templateUrl: './delete.component.html',
@@ -16,7 +16,7 @@ export class DeleteComponent {
   // allId : number[] = this.allTransactions.map( object => object.id)
 
 
-  constructor (private service: StockService){}
+  constructor (private service: StockService,  private router: Router){}
 
   deleteForm = new FormGroup({
 
@@ -25,6 +25,12 @@ export class DeleteComponent {
   })
   posts: any;
   transactionLabels: any ;
+  transaction: any;
+  errormessage:any;
+
+
+
+
 
   ngOnInit() {
     this.transactionLabels = [];
@@ -33,6 +39,9 @@ export class DeleteComponent {
         this.posts = response;
         this.transactionLabels = this.posts.table.map((transaction: any) => transaction.transactionId);
 
+      },(error)=> {
+        this.errormessage = error;
+        //console.log(error);
       });
 
 
@@ -45,6 +54,27 @@ export class DeleteComponent {
    //   this.deleteForm.reset({});
    //  })
     console.log(+this.deleteForm.value.id);
-    // this.service.getTransaction(+this.deleteForm.value, 1)
+    this.service.getTransaction(+this.deleteForm.value.id, 1)
+      .subscribe(request=>{
+        this.transaction = request;
+      }, (error)=> {
+        this.errormessage = error;
+        //console.log(error);
+      })
+    console.log(this.transaction);
 }
+
+ onConfirmDelete(): void{
+
+    this.service.deleteTransaction(+this.deleteForm.value.id).subscribe((result: any) => {
+        //console.log(result);
+        this.router.navigate(["/success"])
+        //this.profileForm.reset({})
+      },
+      (error)=> {
+        this.errormessage = error;
+        //console.log(error);
+      }
+    )
+ }
 }

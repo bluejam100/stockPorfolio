@@ -1,5 +1,6 @@
 
 <div id = delete-container>
+  <div *ngIf = "errormessage">{{errormessage}}</div>
 <form [formGroup] = "deleteForm" (ngSubmit)="submitDelete()">
 <mat-form-field appearance="fill">
   <mat-label>Select</mat-label>
@@ -10,5 +11,9 @@
 </mat-form-field>
 
   <div id = submitDelete><button [disabled]="deleteForm.invalid" type= "submit"> Submit </button></div>
+
+
 </form>
+    <div> {{transaction | json }} </div>
+    <div *ngIf="transaction" > <button (click) = "onConfirmDelete()">Delete</button></div>
 </div>

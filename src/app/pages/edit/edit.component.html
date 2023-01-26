@@ -1,1 +1,68 @@
-<p>edit works!</p>
+<div id = edit-container>
+  <div *ngIf = "errormessage">{{errormessage}}</div>
+  <form [formGroup] = "editForm" (ngSubmit)="submitEdit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Select</mat-label>
+      <mat-select  type = "number" formControlName = "id" required>
+        <mat-option *ngFor="let id of transactionLabels;" value={{id}}>{{id}}</mat-option>
+
+      </mat-select>
+    </mat-form-field>
+
+    <div id = submitDelete><button [disabled]="editForm.invalid" type= "submit"> Submit </button></div>
+
+
+  </form>
+
+
+  <div> {{transaction | json }} </div>
+  <div *ngIf="transaction" >
+
+    <form [formGroup] = "editForm2" (ngSubmit)="onConfirmEdit()">
+
+
+
+      <div id = add-number><div class=titleField>Number of shares</div>
+
+        <p>
+          <mat-form-field appearance="fill" >
+            <mat-label>Enter number</mat-label>
+            <input matInput type = "number" formControlName = "number" required />
+            <mat-hint></mat-hint>
+          </mat-form-field>
+        </p>
+
+
+      </div>
+
+      <div id = add-price> <div class=titleField>Price per share</div>
+        <p>
+          <mat-form-field appearance="fill" >
+            <mat-label>Enter price </mat-label>
+            <input matInput type="number" formControlName = "price" required class="example-right-align"  >
+            <span matTextPrefix="">$&nbsp;</span>
+
+
+          </mat-form-field>
+        </p>
+
+      </div>
+
+      <div id = add-date> <div class=titleField>Date</div>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <input matInput formControlName="date" required  [matDatepicker]="picker">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+      </div>
+
+      <div><button [disabled]="editForm2.invalid" type= "submit"> Edit </button></div>
+    </form>
+
+
+  </div>
+</div>
+
