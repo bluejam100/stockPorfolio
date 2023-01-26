@@ -7,8 +7,8 @@
   grid-template-columns: 3fr 1fr ;
   grid-template-rows: 1fr 1fr;
   grid-template-areas:
-    "top-container side-container"
-  "bottom-container side-container"
+    "top-container top-side-container"
+  "bottom-container bottom-side-container"
 ;
   grid-gap: 1.5rem;
   margin: 2vh 16vw 2vh 16vw;
@@ -62,12 +62,24 @@
 
 }
 
-#side-container {
+#bottom-side-container {
   /*background-color: pink;*/
   background-color: var(--main-bg-color-primary);
-  grid-area : side-container;
+  grid-area : bottom-side-container;
   border-radius:var(--main-radius);
   padding: var(--main-padding);
+  /*box-shadow: var(--main-box-shadow);*/
+}
+
+#top-side-container {
+  /*background-color: pink;*/
+  background-color: var(--main-bg-color-primary);
+  grid-area : top-side-container;
+  border-radius:var(--main-radius);
+  padding: var(--main-padding);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /*box-shadow: var(--main-box-shadow);*/
 }
 
@@ -175,11 +187,12 @@
     margin-left:4vw;
 
     grid-template-columns: 1fr ;
-    grid-template-rows: 1fr 0.7fr 0.7fr;
+    grid-template-rows: 1fr 0.7fr 0.7fr 0.7fr;
     grid-template-areas:
     "top-container"
   "bottom-container"
-    "side-container"
+    "top-side-container"
+    "bottom-side-container"
   }
 
   .porfolio-title{

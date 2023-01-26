@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import data, {DateToValue, Serial} from "../../Data";
 import {PostService } from "../../core/pokeapi.service2";
+import {StockService} from "../../core/StockService";
 
 Chart.register(...registerables);
 
@@ -15,7 +16,7 @@ export class ChartComponent implements OnInit {
   posts : any;
 
 
-  constructor(private service: PostService) {
+  constructor(private service: StockService) {
   }
   //chartObject : DateToValue[] = data.chart;
   //dateLabels: string[] = this.chartObject.map(object => object.date);
@@ -29,7 +30,7 @@ export class ChartComponent implements OnInit {
     this.dateLabels = []
     this.portfolioValue = []
 
-    this.service.getPosts()
+    this.service.getChart()
       .then(response  => {
 
         this.posts = response;

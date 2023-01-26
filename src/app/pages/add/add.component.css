@@ -97,3 +97,7 @@ input.example-right-align {
   grid-area: submit;
   padding: var(--main-padding);
 }
+
+.danger {
+  background-color: red;
+}

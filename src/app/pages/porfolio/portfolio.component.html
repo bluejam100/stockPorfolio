@@ -1,9 +1,7 @@
 <div id = profile-container>
 <!--<h1>Angular 13 HttpClient for Sending Http Request Example - ItSolutionStuff.com</h1>-->
 
-<ul class="list-group">
-    {{ posts | json  }}
-</ul>
+
 
 
 
@@ -84,7 +82,10 @@
       </cdk-virtual-scroll-viewport>
     </div>
   </div>
-  <div id = side-container>
+
+  <div id = top-side-container><app-pie-chart></app-pie-chart></div>
+
+  <div id = bottom-side-container>
 
     <div><a routerLink="add"> <button id = add-button class = crud-button> Add stock</button></a></div>
     <div><a routerLink="sell"><button id = sell-button class = crud-button> Sell stock</button></a></div>

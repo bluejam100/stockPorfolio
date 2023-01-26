@@ -1,7 +1,11 @@
 <div id = add-container>
 
 
-  <div id = add-title> Add Stock</div>
+  <div id = add-title> Add Stock
+  <div *ngIf = "errormessage">
+  <div class = danger > <h5> {{errormessage}}</h5></div>
+  </div>
+  </div>
 
 <form [formGroup] = "profileForm" (ngSubmit)="onSubmit()">
   <div id = add-name >

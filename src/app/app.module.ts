@@ -18,6 +18,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {HttpClientModule} from "@angular/common/http";
 import {MaterialExampleModule} from '../material.module';
+import { SuccessComponent } from './pages/success/success.component';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
+import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 
 
 
@@ -28,7 +31,10 @@ const appRoutes : Routes = [
   {path : 'profile/add', component : AddComponent},
   {path : 'profile/sell', component : SellComponent},
   {path : 'profile/delete', component : DeleteComponent},
-  {path : 'profile/edit', component : EditComponent}
+  {path : 'profile/edit', component : EditComponent},
+  {path : 'success', component : SuccessComponent},
+
+  {path: '**', component: NotfoundComponent}
 ]
 
 
@@ -42,7 +48,10 @@ const appRoutes : Routes = [
     AddComponent,
     SellComponent,
     DeleteComponent,
-    EditComponent
+    EditComponent,
+    SuccessComponent,
+    NotfoundComponent,
+    PieChartComponent
   ],
   imports: [
     BrowserModule,

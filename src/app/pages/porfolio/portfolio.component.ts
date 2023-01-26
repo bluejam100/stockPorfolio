@@ -53,7 +53,7 @@ export class PortfolioComponent implements OnInit {
   public dateLabels: string[] = [];
   public portfolioValue: number[] = [];
 
-  constructor(private service: PostService) {
+  constructor(private service: StockService) {
   }
 
   posts: any;

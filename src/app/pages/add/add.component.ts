@@ -3,6 +3,8 @@ import {FormGroup, FormControl, Validators, FormBuilder} from "@angular/forms";
 import {StockService} from "../../core/StockService";
 import {Transaction} from "../../Data";
 import {HttpErrorResponse} from "@angular/common/http";
+import {Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-add',
@@ -10,8 +12,8 @@ import {HttpErrorResponse} from "@angular/common/http";
   styleUrls: ['./add.component.css']
 })
 export class AddComponent  {
-
-  constructor (private service: StockService){}
+  errormessage:any;
+  constructor (private service: StockService, private router: Router){}
     today : Date = new Date();
 
   profileForm = new FormGroup({
@@ -29,10 +31,18 @@ export class AddComponent  {
 
     this.profileForm.value.date = this.profileForm.value.date.toString()
 
-   this.service.addStock(this.profileForm.value, 1).subscribe((result: any) => {
+   this.service.addStock(this.profileForm.value, 1).subscribe((result: Transaction) => {
      //console.log(result);
-     this.profileForm.reset({})
-   })
+     this.router.navigate(["/success"])
+       //this.profileForm.reset({})
+   },
+    (error)=> {
+     this.errormessage = error;
+       //console.log(error);
+     }
+
+   )
+
   }
 
 

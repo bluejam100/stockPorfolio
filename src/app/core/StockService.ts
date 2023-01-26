@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 
 import {Serial, Transaction} from "../Data";
-import { Observable, throwError } from 'rxjs';
+import {firstValueFrom, Observable, throwError} from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import {FormGroup} from "@angular/forms";
 
@@ -14,10 +14,11 @@ import {FormGroup} from "@angular/forms";
 export class StockService {
 
 
-  private apiServerUrl ='http://localhost:8080'
-  constructor(private http: HttpClient) { }
+  private url ='http://localhost:8080'
+  constructor(private httpClient: HttpClient) { }
 
   private handleError(error: HttpErrorResponse) {
+    let errormessage="";
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', error.error);
@@ -25,35 +26,49 @@ export class StockService {
       // The backend returned an unsuccessful response code.
       // The response body may contain clues as to what went wrong.
       console.error(
-        `Backend returned code ${error.status}, body was: `, error.error);
+        `Backend returned code ${error.status}, body was: ${error.error} `);
+      errormessage = `Error:  ${error.error}`;
     }
     // Return an observable with a user-facing error message.
-    return throwError(() => new Error('Something bad happened; please try again later.'));
+    return throwError(() => new Error(errormessage));
   }
 
 
-  public getPortfolio(userId: number): Observable<Serial> {
-    return this.http.get<Serial>( `${this.apiServerUrl}/allData/${userId}`);
-      //.pipe(catchError(this.handleError));
+  // public getPortfolio(userId: number): Observable<Serial> {
+  //   return this.http.get<Serial>( `${this.apiServerUrl}/allData/${userId}`);
+  //     //.pipe(catchError(this.handleError));
+  // }
+
+
+  public getPosts(){
+    return this.httpClient.get(`${this.url}/allData/1`);
   }
+
+  public getChart(){
+    return firstValueFrom(this.httpClient.get(`${this.url}/allData/1`)).then( (data) => {return data} );
+  }
+
+
 // Change return type to transaction later
   public addStock(data : any, userId: number): Observable<Transaction> {
- return this.http.post<Transaction>(`${this.apiServerUrl}/stock/buy${userId}`, data);
+ return this.httpClient.post<Transaction>(`${this.url}/stock/buy/${userId}`, data).pipe(
+   catchError(this.handleError));
   }
-  public sellStock(id : number): Observable<Transaction> {
-    return this.http.post<Transaction>(`${this.apiServerUrl}/stock/sell`, id);
-  }
-
-  public getStock(id : number): Observable<Transaction> {
-    return this.http.post<Transaction>(`${this.apiServerUrl}/stock/read`, id);
+  public sellStock(data : any, userId: number): Observable<Transaction> {
+    return this.httpClient.post<Transaction>(`${this.url}/stock/buy/${userId}`, data).pipe(
+      catchError(this.handleError));
   }
 
-  public EditTransaction(transaction : Transaction): Observable<Transaction> {
-    return this.http.put<Transaction>(`${this.apiServerUrl}/transaction/edit`, transaction);
+  public getStock(userId: number, transactionId : number) {
+  return this.httpClient.get(`${this.url}/transaction/${transactionId}/${userId}`);
+  }
+
+  public editTransaction(transactionId : number, userId:number, data:any): Observable<Transaction> {
+    return this.httpClient.put<Transaction>(`${this.url}/edit/${transactionId}/${userId}`, data);
   }
 // Check if this one is received correctly
   public deleteTransaction(id : number): Observable<void> {
-    return this.http.delete<void>(`${this.apiServerUrl}/transaction/delete/${id}`);
+    return this.httpClient.delete<void>(`${this.url}/transaction/delete/${id}`);
   }
 
 }
