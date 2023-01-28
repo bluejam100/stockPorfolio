@@ -9,7 +9,7 @@ import {RouterModule, Routes } from "@angular/router";
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatTableModule} from "@angular/material/table";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {ChartComponent} from "./components/chart/chart.component";
+
 import { AddComponent } from './pages/add/add.component';
 import { SellComponent } from './pages/sell/sell.component';
 import { DeleteComponent } from './pages/delete/delete.component';
@@ -50,7 +50,6 @@ const appRoutes : Routes = [
     HeaderComponent,
     HomepageComponent,
     PortfolioComponent,
-    ChartComponent,
     AddComponent,
     SellComponent,
     DeleteComponent,

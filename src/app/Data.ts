@@ -20,7 +20,8 @@ export interface Serial {
   totalInvested: string;
   netProfit: string;
   chart: DateToValue[];
-  table: Transaction[]
+  table: Transaction[];
+  donutChart : number[];
 }
 
 
@@ -123,7 +124,9 @@ let data: Serial = {
     }
 
 
-  ]
+  ],
+
+  "donutChart" : [10,30,40,100]
 }
 
 export default data;

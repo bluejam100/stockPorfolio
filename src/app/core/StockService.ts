@@ -69,8 +69,8 @@ export class StockService {
   return this.httpClient.get(`${this.url}/transaction/${transactionId}/${userId}`);
   }
 
-  public editTransaction(transactionId : number, userId:number, data:any): Observable<Transaction> {
-    return this.httpClient.put<Transaction>(`${this.url}/edit/${transactionId}/${userId}`, data);
+  public editTransaction(transactionId : number, userId:number, data:any) {
+    return this.httpClient.put(`${this.url}/edit/${transactionId}/${userId}`, data);
   }
 // Check if this one is received correctly
   public deleteTransaction(transactionId : number): Observable<void> {

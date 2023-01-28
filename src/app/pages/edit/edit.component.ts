@@ -21,9 +21,8 @@ export class EditComponent {
 
 
   editForm2 = new FormGroup({
-
-    number : new FormControl(0,[ Validators.min(1)]),
     price : new FormControl(0,[ Validators.min(0.01)]),
+    number : new FormControl(0,[ Validators.min(1)]),
     date : new FormControl()
   })
 
@@ -43,7 +42,6 @@ export class EditComponent {
         //console.log(error);
       });
 
-
   }
 
   submitEdit(): void {
@@ -52,7 +50,6 @@ export class EditComponent {
     //
     //   this.deleteForm.reset({});
     //  })
-    console.log(+this.editForm.value.id);
     this.service.getTransaction(+this.editForm.value.id, 1)
       .subscribe(request=>{
         this.transaction = request;
@@ -60,10 +57,17 @@ export class EditComponent {
         this.errormessage = error;
         //console.log(error);
       })
-    console.log(this.transaction);
   }
 
   onConfirmEdit(): void{
+    this.editForm2.value.date = this.editForm2.value.date.toString()
+    console.log(this.transaction.transactionType);
+    if(this.transaction.transactionType == "Sell"){
+      // @ts-ignore
+      this.editForm2.value.number = -Math.abs(+this.editForm2.value.number)
+    }
+    console.log(this.editForm2.value.number)
+
 
     this.service.editTransaction(+this.editForm.value.id, 1, this.editForm2.value).subscribe((result: any) => {
         //console.log(result);
