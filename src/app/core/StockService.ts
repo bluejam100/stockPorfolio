@@ -27,7 +27,7 @@ export class StockService {
       // The response body may contain clues as to what went wrong.
       console.error(
         `Backend returned code ${error.status}, body was: ${error.error} `);
-      errormessage = `Error:  ${error.error}`;
+      errormessage = `${error.error}`;
     }
     // Return an observable with a user-facing error message.
     return throwError(() => new Error(errormessage));
@@ -66,15 +66,18 @@ export class StockService {
   }
 
   public getStock(userId: number, transactionId : number) {
-  return this.httpClient.get(`${this.url}/transaction/${transactionId}/${userId}`);
+  return this.httpClient.get(`${this.url}/transaction/${transactionId}/${userId}`).pipe(
+    catchError(this.handleError));
   }
 
   public editTransaction(transactionId : number, userId:number, data:any) {
-    return this.httpClient.put(`${this.url}/edit/${transactionId}/${userId}`, data);
+    return this.httpClient.put(`${this.url}/edit/${transactionId}/${userId}`, data).pipe(
+      catchError(this.handleError));
   }
 // Check if this one is received correctly
   public deleteTransaction(transactionId : number): Observable<void> {
-    return this.httpClient.delete<void>(`${this.url}/transaction/delete/${transactionId}`);
+    return this.httpClient.delete<void>(`${this.url}/transaction/delete/${transactionId}`).pipe(
+      catchError(this.handleError));
   }
 
 }

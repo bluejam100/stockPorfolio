@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Chart, registerables } from 'chart.js'
+import {StockService} from "../../core/StockService";
 Chart.register(...registerables);
 @Component({
   selector: 'app-pie-chart',
@@ -8,40 +9,54 @@ Chart.register(...registerables);
 })
 export class PieChartComponent {
 
+  constructor(private service: StockService) {
+  }
+
+  posts: any;
+  donutLabelsValue: any;
+  shareNumberValue: any;
 
   ngOnInit(): void {
 
+    this.service.getPosts()
+      .subscribe(response => {
+        this.posts = response;
+        this.donutLabelsValue = this.posts.donutChart.map((donut: any) => donut.shareName);
+        this.shareNumberValue = this.posts.donutChart.map((donut: any) => donut.numberOfShare);
 
-    var pieChart = new Chart("pieChart", {
-      type: 'doughnut',
-      data: {
-        labels: ['Apple', 'Amazon', 'Netflix', 'Others'],
-        datasets: [{
-          label: '# of Stocks',
-          data: [32, 19, 3, 5],
-          backgroundColor: [
-            'rgba(202, 210, 197,0.8)',
-            'rgba(132, 169, 140,0.8)',
-            'rgba(82, 121, 111,0.8)',
-            'rgba(53, 79, 82,0.8)'
-          ],
-          borderColor: [
-            'rgb(202, 210, 197, 1)',
-            'rgba(132, 169, 140, 1)',
-            'rgba(82, 121, 111, 1)',
-            'rgba(53, 79, 82, 1)'
-          ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        //cutoutPercentage: 40,
-        responsive: false,
 
-      }
-    });
+        var pieChart = new Chart("pieChart", {
+          type: 'doughnut',
+          data: {
+            labels: this.donutLabelsValue,
+            datasets: [{
+              label: '# of Stocks',
+              data: this.shareNumberValue,
+              backgroundColor: [
+                'rgba(53, 79, 82,0.8)',
+                'rgba(82, 121, 111,0.8)',
+                'rgba(132, 169, 140,0.8)',
+                'rgba(202, 210, 197,0.8)'
+              ],
+              borderColor: [
+                'rgba(53, 79, 82, 1)',
+                'rgba(82, 121, 111, 1)',
+                'rgba(132, 169, 140, 1)',
+                'rgb(202, 210, 197, 1)'
 
+              ],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            //cutoutPercentage: 40,
+            responsive: false,
+
+          }
+        });
+
+
+      })
 
   }
-
 }

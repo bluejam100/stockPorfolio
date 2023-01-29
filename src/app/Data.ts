@@ -21,7 +21,13 @@ export interface Serial {
   netProfit: string;
   chart: DateToValue[];
   table: Transaction[];
-  donutChart : number[];
+  donutChart : Donut[];
+}
+
+export interface Donut  {
+  shareName: string;
+  numberOfShare: number;
+
 }
 
 
@@ -126,7 +132,18 @@ let data: Serial = {
 
   ],
 
-  "donutChart" : [10,30,40,100]
+  "donutChart" : [
+    {
+      "shareName": "Apple",
+      "numberOfShare": 1
+    },
+    {
+      "shareName": "Amazon",
+      "numberOfShare": 2
+    }
+
+
+  ]
 }
 
 export default data;
