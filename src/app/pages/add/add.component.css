@@ -13,14 +13,16 @@
   padding-bottom:  2vh ;
   grid-gap: 0.8rem;
   margin: 8vh 10vw 0 10vw;
-  border: 1px solid #b6b7b8;
+  /*border: 1px solid #b6b7b8;*/
   border-radius: 5px;
+
 }
 
 @media only screen and (max-width:890px){
   #add-container {
     margin-right: 1vw;
     margin-left:1vw;
+
   }
 }
 

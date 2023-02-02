@@ -11,8 +11,7 @@
   "bottom-container bottom-side-container"
 ;
   grid-gap: 1.5rem;
-  margin: 2vh 16vw 2vh 16vw;
-
+  margin: 4vh 4vw 2vh 4vw;
   border-radius: 30px;
 }
 
@@ -105,7 +104,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  color: #b6b7b8;
+  color: #a5a7a8;
   font-weight: 600;
 }
 
@@ -125,7 +124,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  max-width: 280px;
+  /*max-width: 280px;*/
 }
 
 #porfolio-value {
@@ -144,14 +143,25 @@
   background-color: #225559;
   color: white;}
 
+
+
 .porfolio-title{
  font-size: 15px;
   margin-bottom: 10px;
 }
 
 .porfolio-number{
-  font-size: 25px;
+  font-size: 20px;
   font-family: 'Chivo Mono', monospace;
+}
+
+
+@media only screen and (min-width:1860px){
+  .porfolio-number{
+    font-size: 25px;
+
+  }
+
 }
 /*ELEMENTS INSIDE TOP-CONTAINER UP*/
 
@@ -181,7 +191,7 @@
 
 /*ELEMENTS INSIDE BOTTOM-CONTAINER UP*/
 
-@media only screen and (max-width:1860px){
+@media only screen and (max-width:1460px){
   #profile-container {
     margin-right: 4vw;
     margin-left:4vw;

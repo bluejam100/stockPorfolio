@@ -2,7 +2,7 @@
 
 export interface DateToValue {
  date: string;
- portfolioValue: string;
+ portfolioValue: number;
 
 }
 
@@ -40,27 +40,27 @@ let data: Serial = {
   "chart": [
   {
     "date": "2023-01-28",
-    "portfolioValue": "16000"
+    "portfolioValue": 16000
   },
   {
     "date": "2023-07-22",
-    "portfolioValue": "16000"
+    "portfolioValue": 16000
   },
   {
     "date": "2022-02-16",
-    "portfolioValue": "16000"
+    "portfolioValue": 16000
   },
     {
       "date": "2022-08-26",
-      "portfolioValue": "16000"
+      "portfolioValue": 16000
     },
     {
       "date": "2022-07-29",
-      "portfolioValue": "16000"
+      "portfolioValue": 16000
     },
     {
       "date": "2022-07-29",
-      "portfolioValue": "16000"
+      "portfolioValue": 16000
     },
 ],
 

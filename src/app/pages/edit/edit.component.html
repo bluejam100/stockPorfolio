@@ -1,5 +1,5 @@
 <div id = edit-container>
-  <div *ngIf = "errormessage">{{errormessage}}</div>
+  <div class = error *ngIf = "errormessage">{{errormessage}}</div>
   <form [formGroup] = "editForm" (ngSubmit)="submitEdit()">
     <mat-form-field appearance="fill">
       <mat-label>Select</mat-label>

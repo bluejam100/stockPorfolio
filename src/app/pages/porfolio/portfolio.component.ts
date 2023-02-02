@@ -4,26 +4,12 @@ import data, {DateToValue, Serial, Transaction} from "../../Data";
 import {StockService} from "../../core/StockService";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {PostService } from "../../core/pokeapi.service";
+
 import {MatTableDataSource} from "@angular/material/table";
 Chart.register(...registerables);
 
 
 
-
-// const ELEMENT_DATA: Transaction[] = [
-//   {id: 1, name: 'Amazon', share: 1.0079, type: 'H', date: "2023-02-23"},
-//   {id: 2, name: 'Apple', share: 4.0026, type: 'He', date: "2023-02-23"},
-//   {id: 3, name: 'Google', share: 6.941, type: 'Li', date: "2023-02-23"},
-//   {id: 4, name: 'Meta', share: 9.0122, type: 'Be', date: "2023-02-23"},
-//   {id: 5, name: 'Netflix', share: 10.811, type: 'B', date: "2023-02-23"},
-//   {id: 1, name: 'Hydrogen', share: 1.0079, type: 'H', date: "2023-02-23"},
-//   {id: 2, name: 'Helium', share: 4.0026, type: 'He', date: "2023-02-23"},
-//   {id: 3, name: 'Lithium', share: 6.941, type: 'Li', date: "2023-02-23"},
-//   {id: 4, name: 'Beryllium', share: 9.0122, type: 'Be', date: "2023-02-23"},
-//   {id: 5, name: 'Boron', share: 10.811, type: 'B', date: "2023-02-23"},
-//
-// ];
 
 
 
@@ -62,7 +48,7 @@ export class PortfolioComponent implements OnInit {
     this.service.getPosts()
       .subscribe(response => {
         this.posts = response;
-        this.portfolioValue = this.posts.chart.map((share: any) => parseFloat(share.sharePrice));
+        this.portfolioValue = this.posts.chart.map((share: any) => share.sharePrice);
         this.dateLabels = this.posts.chart.map((share: any) => share.shareDate);
 
         for (let i = 0 ; i < this.dateLabels.length; i++){

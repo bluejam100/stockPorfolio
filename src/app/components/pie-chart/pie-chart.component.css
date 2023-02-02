@@ -1,6 +1,39 @@
 #divPieChart{
-  display: block;
+
   width: 100%;
   height: 100%;
+  background-color: var(--main-bg-color-primary);
+  grid-area : top-container;
+  border-radius:var(--main-radius);
+  padding: 15px;
+  /*box-shadow: var(--main-box-shadow);*/
 
+  display: grid;
+  grid-template-columns: 1fr ;
+  grid-template-rows: 0.3fr 1fr;
+  grid-template-areas:
+    "stock-title"
+    "pieChart"
+
+;
+  grid-gap: 1rem;
+}
+
+#stock-title {
+
+  /*background-color: pink;*/
+  grid-area : stock-title;
+  padding: var(--main-padding);
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -1px;
+  /*box-shadow: var(--main-box-shadow);*/
+}
+
+#pieChart{
+  width: 100%;
+  height : 100%;
 }

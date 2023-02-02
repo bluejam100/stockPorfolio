@@ -1,6 +1,6 @@
 
 <div id = delete-container>
-  <div *ngIf = "errormessage">{{errormessage}}</div>
+  <div class = error *ngIf = "errormessage">{{errormessage}}</div>
 <form [formGroup] = "deleteForm" (ngSubmit)="submitDelete()">
 <mat-form-field appearance="fill">
   <mat-label>Select</mat-label>
