@@ -20,7 +20,7 @@ export class SellComponent  {
 
     name : new FormControl(),
     number : new FormControl(1,[ Validators.min(1)]),
-    price : new FormControl(0.01,[ Validators.min(0.01)]),
+    price : new FormControl(0,[ Validators.min(0)]),
     date : new FormControl()
   })
 

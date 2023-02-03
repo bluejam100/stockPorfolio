@@ -2,18 +2,17 @@
 
   width: 100%;
   height: 100%;
-  background-color: var(--main-bg-color-primary);
+  /*background-color: pink;*/
+  /*background-color: var(--main-bg-color-primary);*/
   grid-area : top-container;
-  border-radius:var(--main-radius);
+  /*border-radius:var(--main-radius);*/
   padding: 15px;
   /*box-shadow: var(--main-box-shadow);*/
 
-  display: grid;
-  grid-template-columns: 1fr ;
-  grid-template-rows: 0.3fr 1fr;
-  grid-template-areas:
-    "stock-title"
-    "pieChart"
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 
 ;
   grid-gap: 1rem;

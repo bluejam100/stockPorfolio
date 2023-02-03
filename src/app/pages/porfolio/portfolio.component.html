@@ -10,7 +10,7 @@
 
 
   <div id = top-container>
-    <div id= top-title >My Portfolio</div>
+    <div id= top-title class = title >My Portfolio</div>
     <div id = validate-date>Valuation date as for&nbsp;&nbsp; <span style="color:black">{{formatTodayDate}}</span></div>
 
 
@@ -19,6 +19,7 @@
     <div id = net-profit class=porfolio-bloc><div class = porfolio-title>Net</div><div class=porfolio-number>${{posts.netProfit}}</div></div>
 
     <div id = chart>
+
   <div id="divChart">
   <canvas id="myChart"></canvas>
 </div>
@@ -30,7 +31,7 @@
 
   <div id = bottom-container>
 
-    <div id = bottom-title>Transactions</div>
+    <div id = bottom-title class = title>Transactions</div>
     <div id = transaction-table>
       <cdk-virtual-scroll-viewport itemSize="5" class="example-viewport">
 
@@ -89,12 +90,14 @@
 
   <div id = bottom-side-container>
 
-    <div><a routerLink="add"> <button id = add-button class = crud-button> Add stock</button></a></div>
-    <div><a routerLink="sell"><button id = sell-button class = crud-button> Sell stock</button></a></div>
-    <div><a routerLink="delete"><button id = delete-button class = crud-button>Delete transactions</button></a></div>
-    <div><a routerLink="edit"><button id = edit-button class = crud-button>Edit transactions</button></a></div>
-    <button id = export-button class = crud-button> Export CVS</button>
+    <div id = actionTitle class = title>Actions</div>
 
+    <div id = button-container>
+    <a routerLink="add"> <button id = add-button class = crud-button> Add stock</button></a>
+   <a routerLink="sell"><button id = sell-button class = crud-button> Sell stock</button></a>
+    <a routerLink="delete"><button id = delete-button class = crud-button>Delete transactions</button></a>
+    <a routerLink="edit"><button id = edit-button class = crud-button>Edit transactions</button></a>
+  </div>
 
   </div>
 

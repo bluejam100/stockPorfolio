@@ -2,8 +2,17 @@
   padding: 10px;
   margin: 10px;
   color: #333;
-  background: #ecffd6;
+  background-color: #9bb5a1;
   border: 1px solid #ccc;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: bolder;
+
 }
 
+#parent-container{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}

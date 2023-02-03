@@ -77,6 +77,9 @@ export class PortfolioComponent implements OnInit {
           options: {
             responsive: true,
             plugins: {
+              legend: {
+                display:false,
+                },
               title: {
                 display: true,
 
@@ -84,6 +87,7 @@ export class PortfolioComponent implements OnInit {
               tooltip: {
                 mode: 'index'
               },
+
             },
             interaction: {
               mode: 'nearest',
@@ -93,14 +97,14 @@ export class PortfolioComponent implements OnInit {
             scales: {
               x: {
                 title: {
-                  display: true,
+                  display: false,
                   text: 'Month'
                 }
               },
               y: {
                 stacked: true,
                 title: {
-                  display: true,
+                  display: false,
                   text: 'Value'
                 }
               }

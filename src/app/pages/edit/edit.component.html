@@ -1,6 +1,18 @@
 <div id = edit-container>
-  <div class = error *ngIf = "errormessage">{{errormessage}}</div>
-  <form [formGroup] = "editForm" (ngSubmit)="submitEdit()">
+
+
+
+
+
+  <div id = edit-title> Edit Transaction
+    <div class = error *ngIf = "errormessage">
+      <div>  {{errormessage}} </div>
+    </div>
+  </div>
+
+
+
+  <form id = form-container1 [formGroup] = "editForm" (ngSubmit)="submitEdit()">
     <mat-form-field appearance="fill">
       <mat-label>Select</mat-label>
       <mat-select  type = "number" formControlName = "id" required>
@@ -15,10 +27,22 @@
   </form>
 
 
-  <div> {{transaction | json }} </div>
-  <div *ngIf="transaction" >
 
-    <form [formGroup] = "editForm2" (ngSubmit)="onConfirmEdit()">
+  <div id=ifTransaction *ngIf="transaction" >
+
+
+    <div id = infoContainer>
+      <div class = infoLine>Id : {{transaction.transactionId}}</div>
+      <div class = infoLine>Type : {{transaction.transactionType}}</div>
+      <div class = infoLine>Stock : {{transaction.transactionName}}</div>
+      <div class = infoLine>Price per share : {{transaction.transactionPrice}}</div>
+      <div class = infoLine>Number of shares : {{transaction.transactionNumber}}</div>
+      <div class = infoLine>Date : {{transaction.transactionDate}}</div>
+    </div>
+
+
+
+    <form id = form-container2  [formGroup] = "editForm2" (ngSubmit)="onConfirmEdit()">
 
 
 

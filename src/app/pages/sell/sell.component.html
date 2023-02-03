@@ -7,7 +7,7 @@
     </div>
   </div>
 
-  <form [formGroup] = "profileForm" (ngSubmit)="onSubmit()">
+  <form id = form-container [formGroup] = "profileForm" (ngSubmit)="onSubmit()">
     <div id = sell-name >
       <div class=titleField>Stock Name</div>
       <p>
@@ -43,7 +43,7 @@
       <p>
         <mat-form-field appearance="fill" >
           <mat-label>Enter price </mat-label>
-          <input matInput type="number" formControlName = "price" required class="example-right-align"  >
+          <input matInput type="number" formControlName = "price" required >
           <span matTextPrefix="">$&nbsp;</span>
 
 

@@ -9,7 +9,6 @@ import {RouterModule, Routes } from "@angular/router";
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatTableModule} from "@angular/material/table";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { AddComponent } from './pages/add/add.component';
 import { SellComponent } from './pages/sell/sell.component';
 import { DeleteComponent } from './pages/delete/delete.component';
@@ -21,7 +20,6 @@ import {MaterialExampleModule} from '../material.module';
 import { SuccessComponent } from './pages/success/success.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { PieChartComponent } from './components/pie-chart/pie-chart.component';
-import { LoginComponent } from './login/login.component';
 
 
 
@@ -34,12 +32,6 @@ const appRoutes : Routes = [
   {path : 'profile/delete', component : DeleteComponent},
   {path : 'profile/edit', component : EditComponent},
   {path : 'success', component : SuccessComponent},
-  {path : 'login', component : LoginComponent},
-  {path : 'login/profile', component : PortfolioComponent},
-  {path : 'login/profile/add', component : AddComponent},
-  {path : 'login/profile/sell', component : SellComponent},
-  {path : 'login/profile/delete', component : DeleteComponent},
-  {path : 'login/profile/edit', component : EditComponent},
   {path: '**', component: NotfoundComponent}
 ]
 
@@ -57,7 +49,7 @@ const appRoutes : Routes = [
     SuccessComponent,
     NotfoundComponent,
     PieChartComponent,
-    LoginComponent
+
   ],
   imports: [
     BrowserModule,
