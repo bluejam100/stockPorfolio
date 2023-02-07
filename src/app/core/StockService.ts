@@ -14,7 +14,7 @@ import {FormGroup} from "@angular/forms";
 export class StockService {
 
 
-  private url ='http://localhost:8080'
+  private url ='http://savesimple-env.eba-4cg7q93v.us-east-1.elasticbeanstalk.com'
   constructor(private httpClient: HttpClient) { }
 
   private handleError(error: HttpErrorResponse) {
